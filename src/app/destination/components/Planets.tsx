@@ -1,27 +1,29 @@
 import { DestinationInfoProps } from "../page";
+import { v4 as uuidv4 } from "uuid";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function Planets({ destination }: any) {
+type Dest = {
+    destination: DestinationInfoProps[];
+};
+
+export default function Planets({ destination }: Dest) {
     return (
         <>
-            {destination.map(
-                (destination: DestinationInfoProps, index: number) => {
-                    return (
-                        <>
-                            <h2 key={index}>{destination.name}</h2>
-                            <p>{destination.description}</p>
-                            <div>
-                                <span>Avg. distance</span>
-                                <span>{destination.distance}</span>
-                            </div>
-                            <div>
-                                <span>Est. travel time</span>
-                                <span>{destination.travel}</span>
-                            </div>
-                        </>
-                    );
-                }
-            )}
+            {destination.map((destination: DestinationInfoProps) => {
+                return (
+                    <div key={uuidv4()}>
+                        <h2>{destination.name}</h2>
+                        <p>{destination.description}</p>
+                        <div>
+                            <span>Avg. distance</span>
+                            <span>{destination.distance}</span>
+                        </div>
+                        <div>
+                            <span>Est. travel time</span>
+                            <span>{destination.travel}</span>
+                        </div>
+                    </div>
+                );
+            })}
         </>
     );
 }
