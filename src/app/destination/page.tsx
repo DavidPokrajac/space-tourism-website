@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
-import Navigation from "@/components/Navigation";
 import Planets from "./components/Planets";
 
 export interface DestinationInfoProps {
@@ -35,7 +34,7 @@ export default function Destination() {
     return (
         <>
             <Header />
-            <Navigation />
+
             <div>
                 <h1>01 Pick your destination</h1>
                 <div>
