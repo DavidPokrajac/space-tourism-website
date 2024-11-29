@@ -1,0 +1,21 @@
+:root {
+    --clr-base-100: hsl(0, 0%, 100%);
+    --clr-primary-300: hsl(231, 77%, 90%);
+    --clr-primary-900: hsl(230, 35%, 7%);
+
+    --text-base: 18px;
+
+    --spacing-25: 2px;
+    --spacing-50: 4px;
+    --spacing-100: 8px;
+    --spacing-150: 12px;
+    --spacing-200: 16px;
+    --spacing-300: 24px;
+    --spacing-400: 32px;
+    --spacing-500: 40px;
+    --spacing-600: 48px;
+    --spacing-800: 64px;
+    --spacing-1000: 80px;
+    --spacing-1200: 96px;
+    --spacing-1600: 128px;
+}

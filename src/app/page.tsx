@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import "./main.css";
 
 export default function Home() {
     return (

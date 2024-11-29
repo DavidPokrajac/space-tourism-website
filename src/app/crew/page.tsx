@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, ChangeEvent } from "react";
 import Header from "@/components/Header";
 import { v4 as uuidv4 } from "uuid";
 
@@ -25,10 +25,14 @@ export default function Crew() {
             const selectedDestination = file.default.crew.filter(
                 (d) => d.name === crewMember
             );
-            setCrewMemberInfo(selectedDestination);
+            setCrewMemberInfo([...selectedDestination]);
         }
         fetchDestination();
     }, [crewMember]);
+
+    function handleCrewMember(event: ChangeEvent<HTMLInputElement>) {
+        setCrewMember(event.target.value);
+    }
 
     return (
         <>
@@ -47,27 +51,31 @@ export default function Crew() {
                 <input
                     type="radio"
                     name="crew-member"
-                    id=""
-                    onChange={() => setCrewMember("Douglas Hurley")}
-                    checked
+                    id="douglas-hurley"
+                    onChange={(event) => handleCrewMember(event)}
+                    value="Douglas Hurley"
+                    checked={crewMember === "Douglas Hurley"}
                 />
                 <input
                     type="radio"
                     name="crew-member"
-                    id=""
-                    onChange={() => setCrewMember("Mark Shuttleworth")}
+                    id="mark-shuttleworth"
+                    onChange={(event) => handleCrewMember(event)}
+                    value="Mark Shuttleworth"
                 />
                 <input
                     type="radio"
                     name="crew-member"
-                    id=""
-                    onChange={() => setCrewMember("Victor Glover")}
+                    id="victor-glover"
+                    onChange={(event) => handleCrewMember(event)}
+                    value="Victor Glover"
                 />
                 <input
                     type="radio"
                     name="crew-member"
-                    id=""
-                    onChange={() => setCrewMember("Anousheh Ansari")}
+                    id="anousheh-ansari"
+                    onChange={(event) => handleCrewMember(event)}
+                    value="Anousheh Ansari"
                 />
             </div>
         </>

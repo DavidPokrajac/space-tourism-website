@@ -1,0 +1,13 @@
+body {
+    background-image: url("/assets/home/background-home-mobile.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+}
