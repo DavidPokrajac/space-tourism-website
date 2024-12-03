@@ -1,0 +1,50 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+}
+
+ul {
+    display: flex;
+    height: 96px;
+    align-items: center;
+    gap: 48px;
+}
+
+@media (min-width: 676px) {
+    .header {
+        padding: 0 0 0 24px;
+    }
+
+    nav {
+        background-color: hsla(0, 0%, 100%, 0.05);
+        font-family: var(--font-barlow-condensed-sans);
+        font-size: 16px;
+        letter-spacing: 2px;
+        padding: 0 40px;
+        flex-grow: 1;
+        flex-basis: 90%;
+    }
+
+    figure {
+        flex-basis: 10%;
+    }
+
+    nav strong {
+        letter-spacing: 2.7px;
+        display: initial;
+        font: inherit;
+        font-weight: 900;
+    }
+
+    .header {
+        padding: 0 0 0 24px;
+    }
+}
+
+@media (min-width: 1092px) {
+    .header {
+        display: grid;
+    }
+}

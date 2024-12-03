@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import "./reset.css";
+import "./css/variables.css";
+import "./css/reset.css";
+import "./css/globals.css";
 
 const bellefair = localFont({
     src: "./fonts/Bellefair-Regular.woff2",

@@ -9,7 +9,7 @@ export default function Header() {
 
     useEffect(() => {
         function handleResize() {
-            if (window.innerWidth <= 450) {
+            if (window.innerWidth <= 676) {
                 setIsMobile(true);
             } else {
                 setIsMobile(false);
@@ -22,7 +22,7 @@ export default function Header() {
     }, [isMobile]);
 
     return (
-        <header>
+        <header className="header">
             <figure>
                 <Image
                     src="/assets/shared/logo.svg"
@@ -43,17 +43,23 @@ export default function Header() {
             ) : (
                 <nav>
                     <ul>
-                        <li>
-                            <Link href="/">00 Home</Link>
+                        <li className="home">
+                            <Link href="/">Home</Link>
                         </li>
                         <li>
-                            <Link href="/destination">01 Destination</Link>
+                            <Link href="/destination">
+                                <strong>01</strong> Destination
+                            </Link>
                         </li>
                         <li>
-                            <Link href="/crew">02 Crew</Link>
+                            <Link href="/crew">
+                                <strong>02</strong> Crew
+                            </Link>
                         </li>
                         <li>
-                            <Link href="/technology">03 Technology</Link>
+                            <Link href="/technology">
+                                <strong>03</strong> Technology
+                            </Link>
                         </li>
                     </ul>
                 </nav>
