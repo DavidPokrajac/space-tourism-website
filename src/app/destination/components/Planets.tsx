@@ -1,31 +1,34 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { DestinationInfoProps } from "../page";
 import { v4 as uuidv4 } from "uuid";
 import Image from "next/image";
 import { Fragment } from "react";
-import { imageSize } from "../../../utilities";
 
 type Dest = {
     destination: DestinationInfoProps[];
 };
 
 export default function Planets({ destination }: Dest) {
-    const [isMobile, setIsMobile] = useState<boolean>(false);
+    const [size, setSize] = useState<number>(150);
 
     useEffect(() => {
         function handleResize() {
             if (window.innerWidth <= 676) {
-                setIsMobile(true);
-            } else {
-                setIsMobile(false);
+                setSize(150);
+            } else if (window.innerWidth > 676 && window.innerWidth <= 1092) {
+                setSize(300);
+            } else if (window.innerWidth > 1092) {
+                setSize(480);
             }
         }
+
         window.addEventListener("resize", handleResize);
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, [isMobile]);
+    }, [size]);
 
     return (
         <>
@@ -36,8 +39,8 @@ export default function Planets({ destination }: Dest) {
                             <Image
                                 src={destination.images.png}
                                 alt=""
-                                width={imageSize()}
-                                height={imageSize()}
+                                width={size}
+                                height={size}
                             />
                         </div>
                         <div className="planet-details">
