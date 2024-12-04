@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Planets from "./components/Planets";
+import "../css/destination.css";
 
 export interface DestinationInfoProps {
     name: string;
@@ -34,16 +35,49 @@ export default function Destination() {
     return (
         <>
             <Header />
-
-            <div>
-                <h1>01 Pick your destination</h1>
-                <div>
-                    <button onClick={() => setDestination("Moon")}>Moon</button>
-                    <button onClick={() => setDestination("Mars")}>Mars</button>
-                    <button onClick={() => setDestination("Europa")}>
+            <div className="destination-container">
+                <p className="introduction">
+                    <span>01</span> Pick your destination
+                </p>
+                <div className="buttons-menu">
+                    <button
+                        onClick={() => setDestination("Moon")}
+                        className={`btn-secondary ${
+                            destination === "Moon"
+                                ? "destination-btn-active"
+                                : ""
+                        }`}
+                    >
+                        Moon
+                    </button>
+                    <button
+                        onClick={() => setDestination("Mars")}
+                        className={`btn-secondary ${
+                            destination === "Mars"
+                                ? "destination-btn-active"
+                                : ""
+                        }`}
+                    >
+                        Mars
+                    </button>
+                    <button
+                        onClick={() => setDestination("Europa")}
+                        className={`btn-secondary ${
+                            destination === "Europa"
+                                ? "destination-btn-active"
+                                : ""
+                        }`}
+                    >
                         Europa
                     </button>
-                    <button onClick={() => setDestination("Titan")}>
+                    <button
+                        onClick={() => setDestination("Titan")}
+                        className={`btn-secondary ${
+                            destination === "Titan"
+                                ? "destination-btn-active"
+                                : ""
+                        }`}
+                    >
                         Titan
                     </button>
                 </div>

@@ -1,3 +1,10 @@
+body {
+    background-image: url("/assets/home/background-home-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
 .main-content {
     display: grid;
     grid-template-columns: subgrid;
@@ -51,7 +58,7 @@
         font-size: 144px;
     }
 
-    .btn-explore {
+    .btn-primary {
         font-size: 32px;
         width: 272px;
         height: 272px;
@@ -76,5 +83,17 @@
     .main-content button {
         place-self: initial;
         align-self: center;
+    }
+}
+
+@media (min-width: 676px) {
+    body {
+        background-image: url("/assets/home/background-home-tablet.jpg");
+    }
+}
+
+@media (min-width: 1092px) {
+    body {
+        background-image: url("/assets/home/background-home-desktop.jpg");
     }
 }

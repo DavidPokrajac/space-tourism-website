@@ -1,11 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import "../app/css/header.css";
 
 export default function Header() {
     const [isMobile, setIsMobile] = useState<boolean>(false);
+
+    const pathname = usePathname();
 
     useEffect(() => {
         function handleResize() {
@@ -44,20 +48,48 @@ export default function Header() {
                 <nav>
                     <ul>
                         <li className="home">
-                            <Link href="/">Home</Link>
+                            <Link
+                                className={`${
+                                    pathname === "/" ? "active-menu-item" : ""
+                                }`}
+                                href="/"
+                            >
+                                Home
+                            </Link>
                         </li>
                         <li>
-                            <Link href="/destination">
+                            <Link
+                                className={`${
+                                    pathname === "/destination"
+                                        ? "active-menu-item"
+                                        : ""
+                                }`}
+                                href="/destination"
+                            >
                                 <strong>01</strong> Destination
                             </Link>
                         </li>
                         <li>
-                            <Link href="/crew">
+                            <Link
+                                className={`${
+                                    pathname === "/crew"
+                                        ? "active-menu-item"
+                                        : ""
+                                }`}
+                                href="/crew"
+                            >
                                 <strong>02</strong> Crew
                             </Link>
                         </li>
                         <li>
-                            <Link href="/technology">
+                            <Link
+                                className={`${
+                                    pathname === "/technology"
+                                        ? "active-menu-item"
+                                        : ""
+                                }`}
+                                href="/technology"
+                            >
                                 <strong>03</strong> Technology
                             </Link>
                         </li>

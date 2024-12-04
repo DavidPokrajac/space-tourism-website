@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import "./css/main.css";
 import "./css/header.css";
 import "./css/home.css";
 
@@ -22,7 +21,7 @@ export default function Home() {
                             experience!
                         </p>
                     </div>
-                    <button className="btn-explore">Explore</button>
+                    <button className="btn-primary">Explore</button>
                 </section>
             </main>
         </>

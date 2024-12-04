@@ -7,14 +7,26 @@
 
 ul {
     display: flex;
-    height: 96px;
     align-items: center;
     gap: 48px;
+}
+
+.header a {
+    display: inline-block;
+    padding: 37px 0;
+}
+
+.active-menu-item {
+    border-bottom: 3px solid var(--clr-base-100);
 }
 
 @media (min-width: 676px) {
     .header {
         padding: 0 0 0 24px;
+        display: grid;
+        grid-column: 1 / -1;
+        grid-row: 1;
+        grid-template-columns: subgrid;
     }
 
     nav {
@@ -23,8 +35,7 @@ ul {
         font-size: 16px;
         letter-spacing: 2px;
         padding: 0 40px;
-        flex-grow: 1;
-        flex-basis: 90%;
+        grid-column: 2 / 4;
     }
 
     figure {
@@ -37,14 +48,19 @@ ul {
         font: inherit;
         font-weight: 900;
     }
-
-    .header {
-        padding: 0 0 0 24px;
-    }
 }
 
 @media (min-width: 1092px) {
     .header {
         display: grid;
+        padding: 40px 0 0 0;
+    }
+
+    .header nav {
+        grid-column: 3 / 5;
+    }
+
+    .header figure {
+        padding-left: 64px;
     }
 }
