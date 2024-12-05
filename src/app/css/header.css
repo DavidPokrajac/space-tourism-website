@@ -1,8 +1,14 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-row: 1 / 2;
     padding: 24px;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+}
+
+.header figure:last-child {
+    place-self: flex-end;
+    align-self: center;
 }
 
 ul {
@@ -23,7 +29,6 @@ ul {
 @media (min-width: 676px) {
     .header {
         padding: 0 0 0 24px;
-        display: grid;
         grid-column: 1 / -1;
         grid-row: 1;
         grid-template-columns: subgrid;
@@ -38,10 +43,6 @@ ul {
         grid-column: 2 / 4;
     }
 
-    figure {
-        flex-basis: 10%;
-    }
-
     nav strong {
         letter-spacing: 2.7px;
         display: initial;
@@ -52,7 +53,6 @@ ul {
 
 @media (min-width: 1092px) {
     .header {
-        display: grid;
         padding: 40px 0 0 0;
     }
 
