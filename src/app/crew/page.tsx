@@ -18,6 +18,28 @@ export interface CrewInfoProps {
 export default function Crew() {
     const [crewMember, setCrewMember] = useState<string>("Douglas Hurley");
     const [crewMemberInfo, setCrewMemberInfo] = useState<CrewInfoProps[]>([]);
+    const [widthSize, setWidthSize] = useState<number>(271);
+    const [heightSize, setHeightSize] = useState<number>(340);
+
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth <= 676) {
+                setWidthSize(271);
+                setHeightSize(340);
+            } else if (window.innerWidth > 676 && window.innerWidth <= 1092) {
+                setWidthSize(446);
+                setHeightSize(560);
+            } else if (window.innerWidth > 1092) {
+                setWidthSize(540);
+                setHeightSize(676);
+            }
+        }
+
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [widthSize, heightSize]);
 
     useEffect(() => {
         async function fetchDestination() {
@@ -40,7 +62,9 @@ export default function Crew() {
         <>
             <Header />
             <div className="crew-container">
-                <p className="introduction">02 Meet your crew</p>
+                <p className="introduction">
+                    <span>02</span> Meet your crew
+                </p>
                 {crewMemberInfo.map((crewMember) => {
                     return (
                         <Fragment key={uuidv4()}>
@@ -58,8 +82,8 @@ export default function Crew() {
                             <div className="crew-member-img">
                                 <Image
                                     src={crewMember.images.png}
-                                    width={271}
-                                    height={340}
+                                    width={widthSize}
+                                    height={heightSize}
                                     alt=""
                                 />
                             </div>
