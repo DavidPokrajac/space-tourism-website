@@ -123,4 +123,38 @@ body {
     body {
         background-image: url("/assets/crew/background-crew-desktop.jpg");
     }
+
+    .crew-container {
+        align-items: center;
+    }
+
+    .crew-container .introduction {
+        grid-column: 2 / 3;
+        font-size: 28px;
+    }
+
+    .crew-member-details {
+        text-align: left;
+        font-size: 18px;
+        grid-template-rows: repeat(4, min-content);
+        place-content: center;
+    }
+
+    .crew-member-role {
+        font-size: 32px;
+    }
+
+    .crew-member-name {
+        font-size: 56px;
+    }
+
+    .crew-member-img {
+        grid-column: 3 / 4;
+        grid-row: 2 / span 2;
+    }
+
+    .crew-member-select {
+        grid-row: 2 / 3;
+        place-self: end start;
+    }
 }
