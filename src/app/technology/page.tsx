@@ -1,7 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
+import Image from "next/image";
 import Header from "@/components/Header";
 import { v4 as uuidv4 } from "uuid";
+import "../css/technology.css";
 
 export interface TechnologyInfoProps {
     name: string;
@@ -32,27 +34,52 @@ export default function Technology() {
     return (
         <>
             <Header />
-            <div>
-                <h1>03 Space launch 101</h1>
-                <span>The terminology</span>
-                <div>
-                    <button onClick={() => setTechnology("Launch vehicle")}>
+            <div className="technology-container">
+                <p className="introduction">
+                    <span>03</span> Space launch 101
+                </p>
+                <div className="technology-select">
+                    <button
+                        onClick={() => setTechnology("Launch vehicle")}
+                        className={`${
+                            technology === "Launch vehicle" ? "active" : ""
+                        }`}
+                    >
                         1
                     </button>
-                    <button onClick={() => setTechnology("Spaceport")}>
+                    <button
+                        onClick={() => setTechnology("Spaceport")}
+                        className={`${
+                            technology === "Spaceport" ? "active" : ""
+                        }`}
+                    >
                         2
                     </button>
-                    <button onClick={() => setTechnology("Space capsule")}>
+                    <button
+                        onClick={() => setTechnology("Space capsule")}
+                        className={`${
+                            technology === "Space capsule" ? "active" : ""
+                        }`}
+                    >
                         3
                     </button>
                 </div>
                 <div>
+                    <span>The terminology</span>
                     {technologyInfo.map((technology) => {
                         return (
-                            <div key={uuidv4()}>
-                                <h2>{technology.name}</h2>
-                                <p>{technology.description}</p>
-                            </div>
+                            <Fragment key={uuidv4()}>
+                                <div className="technology-details">
+                                    <h2>{technology.name}</h2>
+                                    <p>{technology.description}</p>
+                                </div>
+                                <Image
+                                    src={technology.images.portrait}
+                                    width={200}
+                                    height={200}
+                                    alt=""
+                                />
+                            </Fragment>
                         );
                     })}
                 </div>
