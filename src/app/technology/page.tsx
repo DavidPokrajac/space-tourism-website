@@ -19,6 +19,23 @@ export default function Technology() {
     const [technologyInfo, setTechnologyInfo] = useState<TechnologyInfoProps[]>(
         []
     );
+    const [isDesktop, setIsDesktop] = useState<boolean>(false);
+
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth > 1092) {
+                setIsDesktop(true);
+            } else if (window.innerWidth <= 1092) {
+                setIsDesktop(false);
+            }
+        }
+
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [isDesktop]);
+
     useEffect(() => {
         async function fetchDestination() {
             const file = await import("../../lib/data.json");
@@ -64,25 +81,31 @@ export default function Technology() {
                         3
                     </button>
                 </div>
-                <div>
-                    <span>The terminology</span>
-                    {technologyInfo.map((technology) => {
-                        return (
-                            <Fragment key={uuidv4()}>
-                                <div className="technology-details">
+                {technologyInfo.map((technology) => {
+                    return (
+                        <Fragment key={uuidv4()}>
+                            <div className="technology-details">
+                                <div>
+                                    <span>The terminology...</span>
                                     <h2>{technology.name}</h2>
-                                    <p>{technology.description}</p>
                                 </div>
+                                <p>{technology.description}</p>
+                            </div>
+                            <div className="technology-img">
                                 <Image
-                                    src={technology.images.portrait}
-                                    width={200}
-                                    height={200}
+                                    src={
+                                        isDesktop
+                                            ? technology.images.portrait
+                                            : technology.images.landscape
+                                    }
+                                    width={isDesktop ? 515 : 768}
+                                    height={isDesktop ? 527 : 310}
                                     alt=""
                                 />
-                            </Fragment>
-                        );
-                    })}
-                </div>
+                            </div>
+                        </Fragment>
+                    );
+                })}
             </div>
         </>
     );
