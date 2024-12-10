@@ -54,7 +54,7 @@ export default function Header() {
                                 }`}
                                 href="/"
                             >
-                                Home
+                                <strong>00</strong> Home
                             </Link>
                         </li>
                         <li>
