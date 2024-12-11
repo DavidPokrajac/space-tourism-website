@@ -25,6 +25,7 @@ export default function Planets({ destination }: Dest) {
         }
 
         window.addEventListener("resize", handleResize);
+        handleResize();
         return () => {
             window.removeEventListener("resize", handleResize);
         };

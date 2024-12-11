@@ -4,6 +4,9 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import { v4 as uuidv4 } from "uuid";
 import "../css/technology.css";
+import { usePathname } from "next/navigation";
+import { backgroundImageSource } from "../utilities";
+// import { backgroundImageSource } from "./utilities";
 
 export interface TechnologyInfoProps {
     name: string;
@@ -21,16 +24,24 @@ export default function Technology() {
     );
     const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
+    const pathname = usePathname();
+    console.log(pathname.slice(1));
+
+    useEffect(() => {
+        backgroundImageSource(pathname.slice(1), document.body.clientWidth);
+    }, []);
+
     useEffect(() => {
         function handleResize() {
-            if (window.innerWidth > 1092) {
+            if (window.innerWidth > 1092 || window.innerWidth < 676) {
                 setIsDesktop(true);
-            } else if (window.innerWidth <= 1092) {
+            } else if (window.innerWidth <= 1092 && window.innerWidth >= 676) {
                 setIsDesktop(false);
             }
         }
 
         window.addEventListener("resize", handleResize);
+        handleResize();
         return () => {
             window.removeEventListener("resize", handleResize);
         };

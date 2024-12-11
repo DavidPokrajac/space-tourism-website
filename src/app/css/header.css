@@ -31,7 +31,8 @@ ul {
         padding: 0;
         grid-column: 1 / -1;
         grid-row: 1;
-        grid-template-columns: subgrid;
+        /* grid-template-columns: subgrid; */
+        grid-template-columns: 128px 1fr;
     }
 
     .header figure {
@@ -68,6 +69,7 @@ ul {
     .header {
         padding: 40px 0 0 0;
         position: relative;
+        grid-template-columns: 176px 1fr 1fr 176px;
     }
 
     .header nav {

@@ -52,7 +52,8 @@ a {
 
 @media (min-width: 676px) {
     body {
-        grid-template-columns: 128px 1fr auto;
+        /* grid-template-columns: 128px 1fr auto; */
+        grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
     }
 }

@@ -1,8 +1,22 @@
+"use client";
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import "./css/header.css";
 import "./css/home.css";
+import { usePathname } from "next/navigation";
+import { backgroundImageSource } from "./utilities";
 
 export default function Home() {
+    const pathname = usePathname();
+    console.log(pathname);
+
+    useEffect(() => {
+        backgroundImageSource(
+            pathname.slice(1) + "home",
+            document.body.clientWidth
+        );
+    }, []);
+
     return (
         <>
             <Header />

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Planets from "./components/Planets";
 import "../css/destination.css";
+import { backgroundImageSource } from "../utilities";
+import { usePathname } from "next/navigation";
 
 export interface DestinationInfoProps {
     name: string;
@@ -20,6 +22,22 @@ export default function Destination() {
     const [destinationInfo, setDestinationInfo] = useState<
         DestinationInfoProps[]
     >([]);
+
+    const pathname = usePathname();
+    const clientWidth = document.body.clientWidth;
+
+    useEffect(() => {
+        function handleResize() {
+            backgroundImageSource(pathname.slice(1), clientWidth);
+        }
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [pathname, clientWidth]);
+
     useEffect(() => {
         async function fetchDestination() {
             const file = await import("../../lib/data.json");
@@ -81,7 +99,6 @@ export default function Destination() {
                         Titan
                     </button>
                 </div>
-                <></>
                 <Planets destination={destinationInfo} />
             </div>
         </>

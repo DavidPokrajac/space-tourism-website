@@ -1,5 +1,5 @@
 body {
-    background-image: url("/assets/home/background-home-mobile.jpg");
+    /* background-image: url("/assets/home/background-home-mobile.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -87,13 +87,13 @@ body {
 }
 
 @media (min-width: 676px) {
-    body {
+    /* body {
         background-image: url("/assets/home/background-home-tablet.jpg");
-    }
+    } */
 }
 
 @media (min-width: 1092px) {
-    body {
+    /* body {
         background-image: url("/assets/home/background-home-desktop.jpg");
-    }
+    } */
 }

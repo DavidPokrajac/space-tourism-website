@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import { v4 as uuidv4 } from "uuid";
 import "../css/crew.css";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { backgroundImageSource } from "../utilities";
 
 export interface CrewInfoProps {
     name: string;
@@ -21,6 +23,12 @@ export default function Crew() {
     const [widthSize, setWidthSize] = useState<number>(271);
     const [heightSize, setHeightSize] = useState<number>(340);
 
+    const pathname = usePathname();
+
+    useEffect(() => {
+        backgroundImageSource(pathname.slice(1), document.body.clientWidth);
+    }, []);
+
     useEffect(() => {
         function handleResize() {
             if (window.innerWidth <= 676) {
@@ -36,6 +44,7 @@ export default function Crew() {
         }
 
         window.addEventListener("resize", handleResize);
+        handleResize();
         return () => {
             window.removeEventListener("resize", handleResize);
         };
