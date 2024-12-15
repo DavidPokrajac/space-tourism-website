@@ -31,6 +31,10 @@ export default function Header() {
         setIsHamburgerClicked(true);
     }
 
+    function closeSidebarMenu() {
+        setIsHamburgerClicked(false);
+    }
+
     return (
         <header className="header">
             <figure>
@@ -58,7 +62,7 @@ export default function Header() {
                                 : ""
                         }`}
                     >
-                        <figure>
+                        <figure onClick={closeSidebarMenu}>
                             <Image
                                 src="/assets/shared/icon-close.svg"
                                 width={24}
