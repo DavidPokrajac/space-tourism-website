@@ -63,6 +63,10 @@ ul {
     text-align: left;
 }
 
+.mobile-sidebar li:hover {
+    border-right: 3px solid rgba(255, 255, 255, 0.5);
+}
+
 .mobile-sidebar a {
     padding: 0;
     display: inline-block;
@@ -90,6 +94,7 @@ ul {
         grid-row: 1;
         /* grid-template-columns: subgrid; */
         grid-template-columns: 128px 1fr;
+        justify-items: initial;
     }
 
     .header figure {
@@ -119,6 +124,10 @@ ul {
 
     ul {
         justify-content: flex-end;
+    }
+
+    nav a:not(.active-menu-item):hover {
+        border-bottom: 3px solid rgba(255, 255, 255, 0.5);
     }
 }
 

@@ -1,5 +1,4 @@
 body {
-    /* background-image: url("/assets/crew/background-crew-mobile.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -67,13 +66,10 @@ body {
 .crew-member-img {
     margin-inline: auto;
     margin-top: 32px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 @media (min-width: 676px) {
-    /* body {
-        background-image: url("/assets/crew/background-crew-tablet.jpg");
-    } */
-
     .crew-container {
         padding: 40px;
         grid-column: 1 / -1;
@@ -121,10 +117,6 @@ body {
 }
 
 @media (min-width: 1092px) {
-    /* body {
-        background-image: url("/assets/crew/background-crew-desktop.jpg");
-    } */
-
     .crew-container {
         grid-template-columns: subgrid;
         align-items: center;

@@ -8,14 +8,22 @@ import { backgroundImageSource } from "./utilities";
 
 export default function Home() {
     const pathname = usePathname();
-    console.log(pathname);
 
     useEffect(() => {
-        backgroundImageSource(
-            pathname.slice(1) + "home",
-            document.body.clientWidth
-        );
-    }, []);
+        function handleBgImage() {
+            backgroundImageSource(
+                pathname.slice(1) + "home",
+                document.body.clientWidth
+            );
+        }
+
+        window.addEventListener("resize", handleBgImage);
+        handleBgImage();
+
+        return () => {
+            window.removeEventListener("resize", handleBgImage);
+        };
+    });
 
     return (
         <>

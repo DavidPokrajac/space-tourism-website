@@ -24,25 +24,24 @@ export default function Destination() {
     >([]);
 
     const pathname = usePathname();
-    const clientWidth = document.body.clientWidth;
 
     useEffect(() => {
-        function handleResize() {
-            backgroundImageSource(pathname.slice(1), clientWidth);
+        function handleBgImage() {
+            backgroundImageSource(pathname.slice(1), document.body.clientWidth);
         }
 
-        window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", handleBgImage);
+        handleBgImage();
 
         return () => {
-            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("resize", handleBgImage);
         };
-    }, [pathname, clientWidth]);
+    });
 
     useEffect(() => {
         async function fetchDestination() {
             const file = await import("../../lib/data.json");
 
-            // console.log(file.default);
             const selectedDestination = file.default.destinations.filter(
                 (d) => d.name === destination
             );

@@ -26,8 +26,17 @@ export default function Crew() {
     const pathname = usePathname();
 
     useEffect(() => {
-        backgroundImageSource(pathname.slice(1), document.body.clientWidth);
-    }, []);
+        function handleBgImage() {
+            backgroundImageSource(pathname.slice(1), document.body.clientWidth);
+        }
+
+        window.addEventListener("resize", handleBgImage);
+        handleBgImage();
+
+        return () => {
+            window.removeEventListener("resize", handleBgImage);
+        };
+    });
 
     useEffect(() => {
         function handleResize() {
@@ -54,7 +63,6 @@ export default function Crew() {
         async function fetchDestination() {
             const file = await import("../../lib/data.json");
 
-            // console.log(file.default);
             const selectedDestination = file.default.crew.filter(
                 (d) => d.name === crewMember
             );

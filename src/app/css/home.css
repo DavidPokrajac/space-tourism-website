@@ -28,6 +28,11 @@ body {
     place-self: center;
 }
 
+.btn-primary:hover {
+    cursor: pointer;
+    outline: 88px solid rgba(255, 255, 255, 0.1);
+}
+
 @media (min-width: 676px) {
     .main {
         padding: var(--spacing-1600) var(--spacing-500);

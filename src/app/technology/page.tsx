@@ -25,11 +25,19 @@ export default function Technology() {
     const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
     const pathname = usePathname();
-    console.log(pathname.slice(1));
 
     useEffect(() => {
-        backgroundImageSource(pathname.slice(1), document.body.clientWidth);
-    }, []);
+        function handleBgImage() {
+            backgroundImageSource(pathname.slice(1), document.body.clientWidth);
+        }
+
+        window.addEventListener("resize", handleBgImage);
+        handleBgImage();
+
+        return () => {
+            window.removeEventListener("resize", handleBgImage);
+        };
+    });
 
     useEffect(() => {
         function handleResize() {
@@ -51,7 +59,6 @@ export default function Technology() {
         async function fetchDestination() {
             const file = await import("../../lib/data.json");
 
-            // console.log(file.default);
             const selectedDestination = file.default.technology.filter(
                 (d) => d.name === technology
             );
