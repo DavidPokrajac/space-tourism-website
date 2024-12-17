@@ -1,14 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import "../app/css/header.css";
 
+gsap.registerPlugin(useGSAP);
+
 export default function Header() {
     const [isMobile, setIsMobile] = useState<boolean>(false);
-    const [isHamburgerClicked, setIsHamburgerClicked] = useState(false);
+
+    const container = useRef(null);
+    const { contextSafe } = useGSAP({ scope: container });
 
     const pathname = usePathname();
 
@@ -27,16 +33,26 @@ export default function Header() {
         };
     }, [isMobile]);
 
-    function handleSidebarMenu() {
-        setIsHamburgerClicked(true);
-    }
+    const handleSidebarMenu = contextSafe(() => {
+        gsap.to(".mobile-sidebar", {
+            duration: 1.25,
+            ease: "bounce.out",
+            right: "0",
+            display: "grid",
+        });
+    });
 
-    function closeSidebarMenu() {
-        setIsHamburgerClicked(false);
-    }
+    const closeSidebarMenu = contextSafe(() => {
+        gsap.to(".mobile-sidebar", {
+            duration: 1,
+            ease: "expo.out",
+            right: "-70%",
+            display: "none",
+        });
+    });
 
     return (
-        <header className="header">
+        <header className="header" ref={container}>
             <figure>
                 <Image
                     src="/assets/shared/logo.svg"
@@ -55,13 +71,7 @@ export default function Header() {
                             alt=""
                         />
                     </figure>
-                    <nav
-                        className={`mobile-sidebar ${
-                            isHamburgerClicked === false
-                                ? "mobile-sidebar-hidden"
-                                : ""
-                        }`}
-                    >
+                    <nav className={`mobile-sidebar`}>
                         <figure onClick={closeSidebarMenu}>
                             <Image
                                 src="/assets/shared/icon-close.svg"
