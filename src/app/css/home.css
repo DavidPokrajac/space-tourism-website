@@ -34,6 +34,10 @@ body {
     transition: outline 0.5s ease-out;
 }
 
+.description {
+    line-height: 1.8;
+}
+
 @media (min-width: 676px) {
     .main {
         padding: var(--spacing-1600) var(--spacing-500);

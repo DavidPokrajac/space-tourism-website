@@ -6,6 +6,7 @@ import "../css/crew.css";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { backgroundImageSource } from "../utilities";
+import InputRadioMenu from "./components/InputRadioMenu";
 
 export interface CrewInfoProps {
     name: string;
@@ -111,37 +112,10 @@ export default function Crew() {
                         </Fragment>
                     );
                 })}
-                <div className="crew-member-select">
-                    <input
-                        type="radio"
-                        name="crew-member"
-                        id="douglas-hurley"
-                        onChange={(event) => handleCrewMember(event)}
-                        value="Douglas Hurley"
-                        checked={crewMember === "Douglas Hurley"}
-                    />
-                    <input
-                        type="radio"
-                        name="crew-member"
-                        id="mark-shuttleworth"
-                        onChange={(event) => handleCrewMember(event)}
-                        value="Mark Shuttleworth"
-                    />
-                    <input
-                        type="radio"
-                        name="crew-member"
-                        id="victor-glover"
-                        onChange={(event) => handleCrewMember(event)}
-                        value="Victor Glover"
-                    />
-                    <input
-                        type="radio"
-                        name="crew-member"
-                        id="anousheh-ansari"
-                        onChange={(event) => handleCrewMember(event)}
-                        value="Anousheh Ansari"
-                    />
-                </div>
+                <InputRadioMenu
+                    crewMember={crewMember}
+                    handleCrewMember={handleCrewMember}
+                />
             </div>
         </>
     );

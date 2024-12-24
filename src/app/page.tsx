@@ -36,7 +36,7 @@ export default function Home() {
                             So, you want to travel to{" "}
                         </p>
                         <strong className="space-strong">Space</strong>
-                        <p>
+                        <p className="description">
                             Let’s face it; if you want to go to space, you might
                             as well genuinely go to outer space and not hover
                             kind of on the edge of it. Well sit back, and relax

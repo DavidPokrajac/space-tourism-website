@@ -167,4 +167,8 @@ body {
         grid-row: 2 / 3;
         place-self: end start;
     }
+
+    .crew-member-select > * + * {
+        margin-left: 40px;
+    }
 }
