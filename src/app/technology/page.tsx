@@ -6,7 +6,6 @@ import { v4 as uuidv4 } from "uuid";
 import "../css/technology.css";
 import { usePathname } from "next/navigation";
 import { backgroundImageSource } from "../utilities";
-// import { backgroundImageSource } from "./utilities";
 
 export interface TechnologyInfoProps {
     name: string;
@@ -25,6 +24,10 @@ export default function Technology() {
     const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
     const pathname = usePathname();
+
+    function handleTechnology(technology: string) {
+        setTechnology(technology);
+    }
 
     useEffect(() => {
         function handleBgImage() {
@@ -75,7 +78,7 @@ export default function Technology() {
                 </p>
                 <div className="technology-select">
                     <button
-                        onClick={() => setTechnology("Launch vehicle")}
+                        onClick={() => handleTechnology("Launch vehicle")}
                         className={`${
                             technology === "Launch vehicle" ? "active" : ""
                         }`}
@@ -83,7 +86,7 @@ export default function Technology() {
                         1
                     </button>
                     <button
-                        onClick={() => setTechnology("Spaceport")}
+                        onClick={() => handleTechnology("Spaceport")}
                         className={`${
                             technology === "Spaceport" ? "active" : ""
                         }`}
@@ -91,7 +94,7 @@ export default function Technology() {
                         2
                     </button>
                     <button
-                        onClick={() => setTechnology("Space capsule")}
+                        onClick={() => handleTechnology("Space capsule")}
                         className={`${
                             technology === "Space capsule" ? "active" : ""
                         }`}

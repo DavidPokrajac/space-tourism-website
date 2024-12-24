@@ -102,6 +102,10 @@ export default function Crew() {
                                     width={widthSize}
                                     height={heightSize}
                                     alt=""
+                                    style={{
+                                        objectFit: "contain",
+                                        height: heightSize,
+                                    }}
                                 />
                             </div>
                         </Fragment>

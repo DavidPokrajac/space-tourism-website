@@ -41,9 +41,9 @@ body {
     aspect-ratio: 1 / 1;
     border-radius: 100vw;
     background-color: transparent;
-    border: 1px solid red;
     color: var(--clr-base-100);
     border: 1px solid rgba(255, 255, 255, 0.25);
+    position: relative;
 }
 
 .technology-select > * + * {
@@ -54,6 +54,12 @@ body {
     background-color: var(--clr-base-100);
     color: var(--clr-primary-900);
     border: none;
+}
+
+.technology-select button:not(.active):hover {
+    border: 1px solid white;
+    transition: border 0.2s;
+    cursor: pointer;
 }
 
 .technology-info {
@@ -160,6 +166,8 @@ body {
     .introduction {
         grid-column: 2 / span 2;
         justify-self: start;
+        font-size: 28px;
+        letter-spacing: 4px;
     }
 
     .technology-select {

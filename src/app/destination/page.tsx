@@ -5,6 +5,7 @@ import Planets from "./components/Planets";
 import "../css/destination.css";
 import { backgroundImageSource } from "../utilities";
 import { usePathname } from "next/navigation";
+import ButtonsMenu from "./components/ButtonsMenu";
 
 export interface DestinationInfoProps {
     name: string;
@@ -24,6 +25,10 @@ export default function Destination() {
     >([]);
 
     const pathname = usePathname();
+
+    const handleDestination = (value: string) => {
+        setDestination(value);
+    };
 
     useEffect(() => {
         function handleBgImage() {
@@ -56,48 +61,10 @@ export default function Destination() {
                 <p className="introduction">
                     <span>01</span> Pick your destination
                 </p>
-                <div className="buttons-menu">
-                    <button
-                        onClick={() => setDestination("Moon")}
-                        className={`btn-secondary ${
-                            destination === "Moon"
-                                ? "destination-btn-active"
-                                : ""
-                        }`}
-                    >
-                        Moon
-                    </button>
-                    <button
-                        onClick={() => setDestination("Mars")}
-                        className={`btn-secondary ${
-                            destination === "Mars"
-                                ? "destination-btn-active"
-                                : ""
-                        }`}
-                    >
-                        Mars
-                    </button>
-                    <button
-                        onClick={() => setDestination("Europa")}
-                        className={`btn-secondary ${
-                            destination === "Europa"
-                                ? "destination-btn-active"
-                                : ""
-                        }`}
-                    >
-                        Europa
-                    </button>
-                    <button
-                        onClick={() => setDestination("Titan")}
-                        className={`btn-secondary ${
-                            destination === "Titan"
-                                ? "destination-btn-active"
-                                : ""
-                        }`}
-                    >
-                        Titan
-                    </button>
-                </div>
+                <ButtonsMenu
+                    destination={destination}
+                    handleDestination={handleDestination}
+                />
                 <Planets destination={destinationInfo} />
             </div>
         </>

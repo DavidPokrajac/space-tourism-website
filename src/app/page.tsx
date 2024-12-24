@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+
 import Header from "@/components/Header";
 import "./css/header.css";
 import "./css/home.css";

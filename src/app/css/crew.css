@@ -50,6 +50,23 @@ body {
     background-color: #979797;
     border-radius: 100vw;
     opacity: 0.1744;
+    position: relative;
+}
+
+.crew-member-select input:not(:checked)::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    inset: 0;
+    transform: scale(0);
+    background-color: inherit;
+    opacity: 1;
+    border-radius: inherit;
+}
+
+.crew-member-select input:not(:checked):hover::before {
+    transform: scale(1);
+    transition: transform 0.2s linear;
 }
 
 .crew-member-select input:checked {
