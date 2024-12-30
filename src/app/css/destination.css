@@ -105,6 +105,7 @@ body {
 button.destination-btn-active {
     color: var(--clr-base-100);
     border-bottom: 3px solid var(--clr-base-100);
+    transform: initial;
 }
 
 @media (min-width: 676px) {

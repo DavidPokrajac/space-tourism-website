@@ -51,6 +51,7 @@ body {
     border-radius: 100vw;
     opacity: 0.1744;
     position: relative;
+    transition: opacity 0.1s ease-in-out, background-color 0.1s 0.1s ease-in-out;
 }
 
 .crew-member-select input:not(:checked)::before {
@@ -83,6 +84,18 @@ body {
 .crew-member-img {
     margin-inline: auto;
     margin-top: 32px;
+}
+
+.crew-member-img img {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+input[type="radio"]:hover,
+input[type="radio"]:focus-visible {
+    opacity: 1;
+    cursor: pointer;
 }
 
 @media (min-width: 676px) {
