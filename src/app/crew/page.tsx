@@ -106,6 +106,7 @@ export default function Crew() {
                                     style={{
                                         objectFit: "contain",
                                         height: heightSize,
+                                        objectPosition: "bottom",
                                     }}
                                 />
                             </div>

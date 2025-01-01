@@ -24,6 +24,10 @@ body {
     grid-template-rows: min-content minmax(150px, 1fr);
 }
 
+.crew-member-details > p {
+    line-height: 1.8;
+}
+
 .crew-member-role {
     font-family: var(--font-bellefair-serif);
     font-size: 18px;
@@ -51,7 +55,7 @@ body {
     border-radius: 100vw;
     opacity: 0.1744;
     position: relative;
-    transition: opacity 0.1s ease-in-out, background-color 0.1s 0.1s ease-in-out;
+    transition: opacity 0.4s linear;
 }
 
 .crew-member-select input:not(:checked)::before {
@@ -128,6 +132,7 @@ input[type="radio"]:focus-visible {
 
     .crew-member-role {
         font-size: 24px;
+        padding-bottom: 16px;
     }
 
     .crew-member-name {

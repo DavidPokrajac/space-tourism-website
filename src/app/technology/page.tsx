@@ -44,9 +44,9 @@ export default function Technology() {
 
     useEffect(() => {
         function handleResize() {
-            if (window.innerWidth > 1092 || window.innerWidth < 676) {
+            if (window.innerWidth > 1092) {
                 setIsDesktop(true);
-            } else if (window.innerWidth <= 1092 && window.innerWidth >= 676) {
+            } else if (window.innerWidth <= 1092) {
                 setIsDesktop(false);
             }
         }

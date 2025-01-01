@@ -29,7 +29,11 @@ body {
 .buttons-menu {
     grid-row: 3;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
+    gap: 32px;
 }
 
 .planet-name {
@@ -51,6 +55,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     padding-bottom: 24px;
+    line-height: 1.8;
 }
 
 .planet-averages-container {
@@ -104,6 +109,10 @@ body {
 
 button.destination-btn-active {
     color: var(--clr-base-100);
+}
+
+.active-something {
+    position: absolute;
     border-bottom: 3px solid var(--clr-base-100);
     transform: initial;
 }
@@ -214,5 +223,9 @@ button.destination-btn-active {
 
     .planet-averages-container > * {
         flex-basis: 50%;
+    }
+
+    .buttons-menu {
+        margin-inline: 0;
     }
 }
