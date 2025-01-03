@@ -45,6 +45,16 @@ body {
 
 .crew-member-select {
     grid-row: 3;
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.active-radio {
+    position: absolute;
+    background-color: var(--clr-base-100);
+    border-radius: 50%;
+    z-index: 2;
 }
 
 .crew-member-select input {
@@ -77,11 +87,11 @@ body {
 .crew-member-select input:checked {
     width: 10px;
     height: 10px;
-    background-color: var(--clr-base-100);
+    /* background-color: var(--clr-base-100); */
     opacity: initial;
 }
 
-.crew-member-select > * + * {
+.crew-member-select > *:not(span) + *:not(span) {
     margin-left: 16px;
 }
 
@@ -184,9 +194,10 @@ input[type="radio"]:focus-visible {
     .crew-member-select {
         grid-row: 2 / 3;
         place-self: end start;
+        margin-inline: 0;
     }
 
-    .crew-member-select > * + * {
+    .crew-member-select > *:not(span) + *:not(span) {
         margin-left: 40px;
     }
 }

@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect, ChangeEvent, Fragment } from "react";
 import Header from "@/components/Header";
 import { v4 as uuidv4 } from "uuid";
@@ -7,6 +8,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { backgroundImageSource } from "../utilities";
 import InputRadioMenu from "./components/InputRadioMenu";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export interface CrewInfoProps {
     name: string;
@@ -17,6 +20,8 @@ export interface CrewInfoProps {
     role: string;
     bio: string;
 }
+
+gsap.registerPlugin(useGSAP);
 
 export default function Crew() {
     const [crewMember, setCrewMember] = useState<string>("Douglas Hurley");
@@ -71,6 +76,19 @@ export default function Crew() {
         }
         fetchDestination();
     }, [crewMember]);
+
+    useGSAP(() => {
+        gsap.fromTo(
+            ".crew-member-img",
+            { opacity: 0 },
+            { opacity: 1, duration: 0.5 }
+        );
+        gsap.fromTo(
+            ".crew-member-details",
+            { opacity: 0 },
+            { opacity: 1, duration: 0.5 }
+        );
+    }, [handleCrewMember]);
 
     function handleCrewMember(event: ChangeEvent<HTMLInputElement>) {
         setCrewMember(event.target.value);
