@@ -44,7 +44,9 @@ export default function Home() {
                             experience!
                         </p>
                     </div>
-                    <button className="btn-primary">Explore</button>
+                    <button type="button" className="btn-primary">
+                        Explore
+                    </button>
                 </section>
             </main>
         </>

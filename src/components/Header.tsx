@@ -68,7 +68,7 @@ export default function Header() {
                             src="/assets/shared/icon-hamburger.svg"
                             width={24}
                             height={21}
-                            alt=""
+                            alt="Open Navigation Menu icon"
                         />
                     </figure>
                     <nav className={`mobile-sidebar`}>
@@ -77,7 +77,7 @@ export default function Header() {
                                 src="/assets/shared/icon-close.svg"
                                 width={24}
                                 height={21}
-                                alt=""
+                                alt="Close Navigation Menu icon"
                             />
                         </figure>
                         <ul>

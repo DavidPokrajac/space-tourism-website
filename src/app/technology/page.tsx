@@ -6,6 +6,9 @@ import { v4 as uuidv4 } from "uuid";
 import "../css/technology.css";
 import { usePathname } from "next/navigation";
 import { backgroundImageSource } from "../utilities";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import TechnologyMenu from "./components/TechnologyMenu";
 
 export interface TechnologyInfoProps {
     name: string;
@@ -15,6 +18,8 @@ export interface TechnologyInfoProps {
     };
     description: string;
 }
+
+gsap.registerPlugin(useGSAP);
 
 export default function Technology() {
     const [technology, setTechnology] = useState<string>("Launch vehicle");
@@ -28,6 +33,21 @@ export default function Technology() {
     function handleTechnology(technology: string) {
         setTechnology(technology);
     }
+
+    useGSAP(() => {
+        if (window.innerWidth >= 676) {
+            gsap.fromTo(
+                ".technology-img",
+                { opacity: 0, left: "-100vw" },
+                { opacity: 1, left: 0, duration: 1 }
+            );
+            gsap.to(".technology-img", {
+                rotation: 360,
+                duration: 1,
+                stagger: 0.2,
+            });
+        }
+    }, [handleTechnology]);
 
     useEffect(() => {
         function handleBgImage() {
@@ -76,32 +96,10 @@ export default function Technology() {
                 <p className="introduction">
                     <span>03</span> Space launch 101
                 </p>
-                <div className="technology-select">
-                    <button
-                        onClick={() => handleTechnology("Launch vehicle")}
-                        className={`${
-                            technology === "Launch vehicle" ? "active" : ""
-                        }`}
-                    >
-                        1
-                    </button>
-                    <button
-                        onClick={() => handleTechnology("Spaceport")}
-                        className={`${
-                            technology === "Spaceport" ? "active" : ""
-                        }`}
-                    >
-                        2
-                    </button>
-                    <button
-                        onClick={() => handleTechnology("Space capsule")}
-                        className={`${
-                            technology === "Space capsule" ? "active" : ""
-                        }`}
-                    >
-                        3
-                    </button>
-                </div>
+                <TechnologyMenu
+                    technology={technology}
+                    handleTechnology={handleTechnology}
+                />
                 {technologyInfo.map((technology) => {
                     return (
                         <Fragment key={uuidv4()}>

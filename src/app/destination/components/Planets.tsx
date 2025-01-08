@@ -101,7 +101,7 @@ export default function Planets({ destination }: Dest) {
                         <div className="planet-img" ref={planetImageRef}>
                             <Image
                                 src={destination.images.png}
-                                alt=""
+                                alt={`An image of a planet ${destination.name}`}
                                 width={size}
                                 height={size}
                             />

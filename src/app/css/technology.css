@@ -69,6 +69,7 @@ body {
 
 .technology-img {
     grid-row: 2 / 3;
+    position: relative;
 }
 
 .technology-container img {
@@ -101,10 +102,6 @@ body {
 }
 
 @media (min-width: 676px) {
-    /* body {
-        background-image: url("/assets/technology/background-technology-tablet.jpg");
-    } */
-
     .technology-container {
         padding: 40px;
         grid-column: 1 / -1;
@@ -155,15 +152,12 @@ body {
 }
 
 @media (min-width: 1092px) {
-    /* body {
-        background-image: url("/assets/technology/background-technology-desktop.jpg");
-    } */
-
     .technology-container {
-        grid-template-columns: 176px min-content 1fr 1fr;
+        grid-template-columns: 136px min-content 1fr 1fr;
         grid-template-rows: min-content 1fr 100px;
         align-items: center;
         text-align: left;
+        padding-right: 0;
     }
 
     .introduction {

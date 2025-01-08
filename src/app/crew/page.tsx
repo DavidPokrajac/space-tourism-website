@@ -120,7 +120,7 @@ export default function Crew() {
                                     src={crewMember.images.png}
                                     width={widthSize}
                                     height={heightSize}
-                                    alt=""
+                                    alt={`An image of ${crewMember.name}`}
                                     style={{
                                         objectFit: "contain",
                                         height: heightSize,
