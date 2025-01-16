@@ -36,13 +36,9 @@ export default function Technology() {
 
     useGSAP(() => {
         if (window.innerWidth >= 676) {
-            gsap.fromTo(
-                ".technology-img",
-                { opacity: 0, left: "-100vw" },
-                { opacity: 1, left: 0, duration: 1 }
-            );
+            gsap.from(".technology-img", { scale: 0 });
             gsap.to(".technology-img", {
-                rotation: 360,
+                scale: 1,
                 duration: 1,
                 stagger: 0.2,
             });

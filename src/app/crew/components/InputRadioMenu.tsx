@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ChangeEvent } from "react";
+import ForwardedInput from "./Input";
 
 gsap.registerPlugin(useGSAP);
 
@@ -66,37 +67,40 @@ export default function InputRadioMenu({
     return (
         <div className="crew-member-select">
             <span className="active-radio"></span>
-            <input
+            <ForwardedInput
                 type="radio"
                 name="crew-member"
                 id="douglas-hurley"
                 onChange={(event) => handleCrewMember(event)}
                 value="Douglas Hurley"
-                checked={crewMember === "Douglas Hurley"}
+                crewMember={crewMember}
                 ref={firstRadioRef}
             />
-            <input
+            <ForwardedInput
                 type="radio"
                 name="crew-member"
                 id="mark-shuttleworth"
                 onChange={(event) => handleCrewMember(event)}
                 value="Mark Shuttleworth"
+                crewMember={crewMember}
                 ref={secondRadioRef}
             />
-            <input
+            <ForwardedInput
                 type="radio"
                 name="crew-member"
                 id="victor-glover"
                 onChange={(event) => handleCrewMember(event)}
                 value="Victor Glover"
+                crewMember={crewMember}
                 ref={thirdRadioRef}
             />
-            <input
+            <ForwardedInput
                 type="radio"
                 name="crew-member"
                 id="anousheh-ansari"
                 onChange={(event) => handleCrewMember(event)}
                 value="Anousheh Ansari"
+                crewMember={crewMember}
                 ref={fourthRadioRef}
             />
         </div>

@@ -18,7 +18,7 @@ body {
 }
 
 .crew-member-details {
-    padding-top: 40px;
+    padding-block-start: 40px;
     display: grid;
     gap: 24px;
     grid-template-rows: min-content minmax(150px, 1fr);
@@ -33,7 +33,7 @@ body {
     font-size: 18px;
     opacity: 0.5;
     text-transform: uppercase;
-    padding-bottom: 8px;
+    padding-block-end: 8px;
 }
 
 .crew-member-name {
@@ -46,7 +46,7 @@ body {
 .crew-member-select {
     grid-row: 3;
     position: relative;
-    width: fit-content;
+    inline-size: fit-content;
     margin-inline: auto;
 }
 
@@ -59,8 +59,8 @@ body {
 
 .crew-member-select input {
     appearance: none;
-    width: 10px;
-    height: 10px;
+    inline-size: 10px;
+    block-size: 10px;
     background-color: #979797;
     border-radius: 100vw;
     opacity: 0.1744;
@@ -87,17 +87,16 @@ body {
 .crew-member-select input:checked {
     width: 10px;
     height: 10px;
-    /* background-color: var(--clr-base-100); */
     opacity: initial;
 }
 
 .crew-member-select > *:not(span) + *:not(span) {
-    margin-left: 16px;
+    margin-inline-start: 16px;
 }
 
 .crew-member-img {
     margin-inline: auto;
-    margin-top: 32px;
+    margin-block-start: 32px;
 }
 
 .crew-member-img img {
@@ -130,7 +129,7 @@ input[type="radio"]:focus-visible {
         font-weight: bold;
         opacity: 0.25;
         display: inline-block;
-        margin-right: 24px;
+        margin-inline-end: 24px;
     }
 
     .crew-member-details {
@@ -142,7 +141,7 @@ input[type="radio"]:focus-visible {
 
     .crew-member-role {
         font-size: 24px;
-        padding-bottom: 16px;
+        padding-block-end: 16px;
     }
 
     .crew-member-name {
@@ -152,7 +151,7 @@ input[type="radio"]:focus-visible {
     .crew-member-img {
         grid-column: 2 / 3;
         grid-row: 4 / 5;
-        margin-top: 8px;
+        margin-block-start: 8px;
     }
 
     .crew-member-select {
@@ -198,6 +197,6 @@ input[type="radio"]:focus-visible {
     }
 
     .crew-member-select > *:not(span) + *:not(span) {
-        margin-left: 40px;
+        margin-inline-start: 40px;
     }
 }

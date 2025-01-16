@@ -1,5 +1,4 @@
 body {
-    /* background-image: url("/assets/home/background-home-mobile.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -18,7 +17,7 @@ body {
 }
 
 .text-content > * + * {
-    margin-top: 24px;
+    margin-block-start: 24px;
 }
 
 .main-content button {
@@ -56,7 +55,7 @@ body {
         grid-row: 1;
         text-align: center;
         font-size: 18px;
-        margin-bottom: 48px;
+        margin-block-end: 48px;
     }
 
     .introduction {
@@ -70,8 +69,8 @@ body {
 
     .btn-primary {
         font-size: 32px;
-        width: 272px;
-        height: 272px;
+        inline-size: 272px;
+        block-size: 272px;
     }
 }
 
@@ -94,16 +93,4 @@ body {
         place-self: initial;
         align-self: center;
     }
-}
-
-@media (min-width: 676px) {
-    /* body {
-        background-image: url("/assets/home/background-home-tablet.jpg");
-    } */
-}
-
-@media (min-width: 1092px) {
-    /* body {
-        background-image: url("/assets/home/background-home-desktop.jpg");
-    } */
 }

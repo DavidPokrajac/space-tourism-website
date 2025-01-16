@@ -40,9 +40,9 @@ body {
     border: none;
     border-radius: 100%;
     display: inline-block;
-    width: 144px;
+    inline-size: 144px;
     aspect-ratio: 1 / 1;
-    margin-top: 5rem;
+    margin-block-start: 5rem;
 }
 
 a {
@@ -53,7 +53,6 @@ a {
 
 @media (min-width: 676px) {
     body {
-        /* grid-template-columns: 128px 1fr auto; */
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
     }
