@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import ForwardedButton from "./Button";
 
 gsap.registerPlugin(useGSAP);
 
@@ -27,6 +28,7 @@ export default function ButtonsMenu({
             height: firstRef.current?.offsetHeight,
             top: 0,
         });
+
         switch (destination) {
             case "Moon":
                 gsap.to(".active-something", {
@@ -65,17 +67,17 @@ export default function ButtonsMenu({
 
     return (
         <div className="buttons-menu">
-            <button
+            <span ref={activeSpan} className="active-something"></span>
+            <ForwardedButton
                 ref={firstRef}
                 onClick={() => handleDestination("Moon")}
                 className={`btn-secondary ${
                     destination === "Moon" ? "destination-btn-active" : ""
                 }`}
             >
-                <span ref={activeSpan} className="active-something"></span>
                 Moon
-            </button>
-            <button
+            </ForwardedButton>
+            <ForwardedButton
                 ref={secondRef}
                 onClick={() => handleDestination("Mars")}
                 className={`btn-secondary ${
@@ -83,8 +85,8 @@ export default function ButtonsMenu({
                 }`}
             >
                 Mars
-            </button>
-            <button
+            </ForwardedButton>
+            <ForwardedButton
                 ref={thirdRef}
                 onClick={() => handleDestination("Europa")}
                 className={`btn-secondary ${
@@ -92,8 +94,8 @@ export default function ButtonsMenu({
                 }`}
             >
                 Europa
-            </button>
-            <button
+            </ForwardedButton>
+            <ForwardedButton
                 ref={fourthRef}
                 onClick={() => handleDestination("Titan")}
                 className={`btn-secondary ${
@@ -101,7 +103,7 @@ export default function ButtonsMenu({
                 }`}
             >
                 Titan
-            </button>
+            </ForwardedButton>
         </div>
     );
 }
