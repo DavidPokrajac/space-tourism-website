@@ -37,7 +37,7 @@ body {
     line-height: 1.8;
 }
 
-@media (min-width: 676px) {
+@media (width >= 676px) {
     .main {
         padding: var(--spacing-1600) var(--spacing-500);
     }
@@ -74,7 +74,7 @@ body {
     }
 }
 
-@media (min-width: 1092px) {
+@media (width >= 1092px) {
     .main-content {
         display: grid;
         grid-column: 2 / 4;

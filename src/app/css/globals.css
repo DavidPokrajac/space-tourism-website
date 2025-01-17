@@ -51,21 +51,21 @@ a {
     color: var(--clr-base-100);
 }
 
-@media (min-width: 676px) {
+@media (width >= 676px) {
     body {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
     }
 }
 
-@media (min-width: 1092px) {
+@media (width >= 1092px) {
     body {
         grid-template-columns: 80px 1fr 1fr 80px;
         grid-template-rows: 136px 1fr;
     }
 }
 
-@media (min-width: 1245px) {
+@media (width >= 1245px) {
     body {
         grid-template-columns: 176px 1fr 1fr 176px;
     }

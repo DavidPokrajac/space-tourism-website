@@ -111,7 +111,7 @@ input[type="radio"]:focus-visible {
     cursor: pointer;
 }
 
-@media (min-width: 676px) {
+@media (width >= 676px) {
     .crew-container {
         padding: var(--spacing-500);
         grid-column: 1 / -1;
@@ -159,7 +159,7 @@ input[type="radio"]:focus-visible {
     }
 }
 
-@media (min-width: 1092px) {
+@media (width >= 1092px) {
     .crew-container {
         grid-template-columns: subgrid;
         align-items: center;

@@ -13,7 +13,7 @@ body {
 }
 
 .technology-container > *:not(.technology-img) {
-    padding-inline: var(--spacing-300);
+    padding-inline: var(--spacing-500);
 }
 
 .introduction {
@@ -101,9 +101,9 @@ body {
     margin-block-start: var(--spacing-200);
 }
 
-@media (min-width: 676px) {
+@media (width >= 676px) {
     .technology-container {
-        padding: var(--spacing-500);
+        padding: var(--spacing-500) 0;
         grid-column: 1 / -1;
         grid-row: 2 / 3;
         grid-template-columns: 40px 1fr 40px;
@@ -151,7 +151,7 @@ body {
     }
 }
 
-@media (min-width: 1092px) {
+@media (width >= 1092px) {
     .technology-container {
         grid-template-columns: 136px min-content 1fr 1fr;
         grid-template-rows: min-content 1fr 100px;
