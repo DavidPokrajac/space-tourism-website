@@ -5,12 +5,12 @@ body {
 }
 
 .crew-container {
-    padding: 24px;
+    padding: var(--spacing-300);
     display: grid;
     grid-row: 2 / 3;
     grid-template-columns: 1fr;
     grid-template-rows: min-content 1fr;
-    gap: 24px;
+    gap: var(--spacing-300);
 }
 
 .crew-container .introduction {
@@ -18,9 +18,9 @@ body {
 }
 
 .crew-member-details {
-    padding-block-start: 40px;
+    padding-block-start: var(--spacing-500);
     display: grid;
-    gap: 24px;
+    gap: var(--spacing-300);
     grid-template-rows: min-content minmax(150px, 1fr);
 }
 
@@ -33,7 +33,7 @@ body {
     font-size: 18px;
     opacity: 0.5;
     text-transform: uppercase;
-    padding-block-end: 8px;
+    padding-block-end: var(--spacing-100);
 }
 
 .crew-member-name {
@@ -85,18 +85,18 @@ body {
 }
 
 .crew-member-select input:checked {
-    width: 10px;
-    height: 10px;
+    inline-size: 10px;
+    block-size: 10px;
     opacity: initial;
 }
 
 .crew-member-select > *:not(span) + *:not(span) {
-    margin-inline-start: 16px;
+    margin-inline-start: var(--spacing-200);
 }
 
 .crew-member-img {
     margin-inline: auto;
-    margin-block-start: 32px;
+    margin-block-start: var(--spacing-400);
 }
 
 .crew-member-img img {
@@ -113,7 +113,7 @@ input[type="radio"]:focus-visible {
 
 @media (min-width: 676px) {
     .crew-container {
-        padding: 40px;
+        padding: var(--spacing-500);
         grid-column: 1 / -1;
         grid-template-columns: 88px 1fr 88px;
     }
@@ -129,7 +129,7 @@ input[type="radio"]:focus-visible {
         font-weight: bold;
         opacity: 0.25;
         display: inline-block;
-        margin-inline-end: 24px;
+        margin-inline-end: var(--spacing-300);
     }
 
     .crew-member-details {
@@ -141,7 +141,7 @@ input[type="radio"]:focus-visible {
 
     .crew-member-role {
         font-size: 24px;
-        padding-block-end: 16px;
+        padding-block-end: var(--spacing-200);
     }
 
     .crew-member-name {
@@ -151,7 +151,7 @@ input[type="radio"]:focus-visible {
     .crew-member-img {
         grid-column: 2 / 3;
         grid-row: 4 / 5;
-        margin-block-start: 8px;
+        margin-block-start: var(--spacing-100);
     }
 
     .crew-member-select {
@@ -171,7 +171,7 @@ input[type="radio"]:focus-visible {
     }
 
     .crew-member-details {
-        text-align: left;
+        text-align: start;
         font-size: 18px;
         grid-template-rows: repeat(4, min-content);
         place-content: center;
@@ -197,6 +197,6 @@ input[type="radio"]:focus-visible {
     }
 
     .crew-member-select > *:not(span) + *:not(span) {
-        margin-inline-start: 40px;
+        margin-inline-start: var(--spacing-500);
     }
 }

@@ -9,15 +9,15 @@ body {
     display: grid;
     grid-template-rows: min-content min-content min-content 1fr;
     grid-row: 2 / 3;
-    padding: 24px;
-    gap: 32px;
+    padding: var(--spacing-300);
+    gap: var(--spacing-400);
 }
 
 .introduction span {
     opacity: 0.25;
     font-weight: bold;
     display: inline-block;
-    margin-inline-end: 24px;
+    margin-inline-end: var(--spacing-300);
 }
 
 .planet-img {
@@ -33,7 +33,7 @@ body {
     position: relative;
     inline-size: fit-content;
     margin-inline: auto;
-    gap: 32px;
+    gap: var(--spacing-400);
 }
 
 .planet-name {
@@ -47,26 +47,26 @@ body {
     grid-row: 4;
     font-size: 15px;
     display: grid;
-    gap: 24px;
+    gap: var(--spacing-300);
     grid-template-rows: repeat(4, min-content);
 }
 
 .planet-details p {
     border-block-end: 1px solid rgba(255, 255, 255, 0.25);
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-    padding-block-end: 24px;
+    padding-block-end: var(--spacing-300);
     line-height: 1.8;
 }
 
 .planet-averages-container {
     display: grid;
-    gap: 24px;
+    gap: var(--spacing-300);
 }
 
 .planet-averages {
     font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: var(--spacing-25);
 }
 
 .planet-average-value {
@@ -75,7 +75,7 @@ body {
     font-size: 28px;
     display: block;
     letter-spacing: 0;
-    margin-block-start: 12px;
+    margin-block-start: var(--spacing-150);
 }
 
 .buttons-menu button {
@@ -121,11 +121,11 @@ button.destination-btn-active {
         grid-row: 2;
         grid-column: 1 / -1;
         grid-template-columns: 88px 1fr 88px;
-        padding: 40px;
+        padding: var(--spacing-500);
     }
 
     .introduction {
-        text-align: left;
+        text-align: start;
         color: var(--clr-base-100);
         font-size: 20px;
         grid-column: 1 / span 2;
@@ -133,7 +133,7 @@ button.destination-btn-active {
 
     .buttons-menu {
         justify-content: center;
-        gap: 32px;
+        gap: var(--spacing-400);
         display: grid;
         grid-auto-flow: column;
         grid-column: 2 / 3;
@@ -171,7 +171,7 @@ button.destination-btn-active {
 
 @media (min-width: 1092px) {
     .destination-container {
-        padding: 24px 0;
+        padding: var(--spacing-300) 0;
         grid-column: 1 / -1;
         grid-template-columns: subgrid;
         grid-template-rows: min-content 0.5fr 32px 2fr 0.5fr;
@@ -184,7 +184,7 @@ button.destination-btn-active {
 
     .planet-details {
         font-size: 18px;
-        gap: 40px;
+        gap: var(--spacing-500);
     }
 
     .planet-img {
@@ -207,13 +207,13 @@ button.destination-btn-active {
     .planet-details {
         grid-row: 4 / 5;
         grid-column: 3 / 4;
-        gap: 40px;
+        gap: var(--spacing-500);
         font-size: 18px;
-        text-align: left;
+        text-align: start;
     }
 
     .planet-details p {
-        padding-block-end: 40px;
+        padding-block-end: var(--spacing-500);
     }
 
     .planet-averages-container {

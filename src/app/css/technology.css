@@ -7,13 +7,13 @@ body {
 .technology-container {
     display: grid;
     grid-template-columns: 1fr;
-    padding-block: 24px 48px;
-    gap: 24px;
+    padding-block: var(--spacing-300) var(--spacing-600);
+    gap: var(--spacing-300);
     grid-row: 2 / 3;
 }
 
 .technology-container > *:not(.technology-img) {
-    padding-inline: 24px;
+    padding-inline: var(--spacing-300);
 }
 
 .introduction {
@@ -24,14 +24,14 @@ body {
 .introduction span {
     opacity: 0.25;
     font-weight: bold;
-    margin-inline-end: 24px;
+    margin-inline-end: var(--spacing-300);
 }
 
 .technology-select {
     font-size: 18px;
     font-family: var(--font-bellefair-serif);
     grid-row: 3 / 4;
-    margin-block-end: 24px;
+    margin-block-end: var(--spacing-300);
 }
 
 .technology-select button {
@@ -46,7 +46,7 @@ body {
 }
 
 .technology-select > * + * {
-    margin-inline-start: 16px;
+    margin-inline-start: var(--spacing-200);
 }
 
 .technology-select button.active {
@@ -79,7 +79,7 @@ body {
 
 .technology-details {
     display: grid;
-    gap: 16px;
+    gap: var(--spacing-200);
 }
 
 .technology-details > p {
@@ -98,12 +98,12 @@ body {
     font-size: 24px;
     text-transform: uppercase;
     color: var(--clr-base-100);
-    margin-block-start: 16px;
+    margin-block-start: var(--spacing-200);
 }
 
 @media (min-width: 676px) {
     .technology-container {
-        padding: 40px;
+        padding: var(--spacing-500);
         grid-column: 1 / -1;
         grid-row: 2 / 3;
         grid-template-columns: 40px 1fr 40px;
@@ -156,7 +156,7 @@ body {
         grid-template-columns: 136px min-content 1fr 1fr;
         grid-template-rows: min-content 1fr 100px;
         align-items: center;
-        text-align: left;
+        text-align: start;
         padding-inline-end: 0;
     }
 
@@ -164,7 +164,7 @@ body {
         grid-column: 2 / span 2;
         justify-self: start;
         font-size: 28px;
-        letter-spacing: 4px;
+        letter-spacing: var(--spacing-50);
     }
 
     .technology-select {
@@ -174,7 +174,7 @@ body {
 
     .technology-select > * + * {
         margin-inline-start: initial;
-        margin-block-start: 32px;
+        margin-block-start: var(--spacing-400);
     }
 
     .technology-select button {
