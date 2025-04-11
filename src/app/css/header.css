@@ -29,10 +29,6 @@ ul {
     padding: 37px 0;
 }
 
-.active-menu-item {
-    border-block-end: 3px solid var(--clr-base-100);
-}
-
 .mobile-sidebar {
     position: absolute;
     z-index: 100;
@@ -68,12 +64,12 @@ ul {
 .mobile-sidebar ul > * {
     inline-size: 100%;
     text-align: start;
+    transition: transform 0.2s ease-in-out;
 }
 
 .mobile-sidebar li:hover {
     border-inline-end: 3px solid rgba(255, 255, 255, 0.5);
-    transform: scale(1.1, 1.2);
-    transition: transform 0.2s ease-in-out;
+    transform: scale(1.1, 1.2) translateX(-9px);
 }
 
 .mobile-sidebar a {
@@ -146,6 +142,10 @@ ul {
         border-block-end: 3px solid rgba(255, 255, 255, 0.5);
         transform: scaleX(1);
         transition: all 0.25s ease-out;
+    }
+
+    .active-menu-item {
+        border-block-end: 3px solid var(--clr-base-100);
     }
 }
 
